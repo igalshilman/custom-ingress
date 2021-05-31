@@ -57,7 +57,7 @@ public final class Module implements StatefulFunctionModule {
     public Message deserialize(ConsumerRecord<byte[], byte[]> consumerRecord) {
       ProducerRecordMessage.Builder builder = ProducerRecordMessage.newBuilder();
       // copy the specific parts that you care about from the record to
-      // the @kvs map.
+      // the builder.
       if (consumerRecord.key() == null) {
         builder.setSkip(true);
         return builder.build();
